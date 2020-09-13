@@ -1,6 +1,9 @@
 language: go
 sudo: true
 
+go:
+- "1.14"
+
 script:
 - sudo apt-get install fuse appstream appstream-util git
 - BUILD_SRC="$(pwd)"
@@ -8,12 +11,6 @@ script:
 - wget https://github.com/probonopd/uploadtool/raw/master/upload.sh; chmod +x upload.sh
 - wget https://github.com/probonopd/linuxdeployqt/releases/download/7/linuxdeployqt-7-x86_64.AppImage; mv linuxdeployqt* linuxdeployqt; chmod +x linuxdeployqt
 - wget https://github.com/syncthing/syncthing/releases/download/v1.9.0/syncthing-source-v1.9.0.tar.gz
-- git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.0
-# preparation
-- . $HOME/.asdf/asdf.sh
-- asdf plugin-add golang https://github.com/kennyp/asdf-golang.git
-- asdf install golang 1.14
-- asdf global golang 1.14
 # unpacking
 - tar xzf syncthing-*.tar.gz && rm *.tar.gz
 - ls -l
