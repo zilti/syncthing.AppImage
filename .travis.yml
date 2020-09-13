@@ -10,6 +10,7 @@ script:
 - wget https://github.com/syncthing/syncthing/releases/download/v1.9.0/syncthing-linux-amd64-v1.9.0.tar.gz
 # unpacking
 - tar xzf syncthing-*.tar.gz
+- ls -l
 - mv syncthing-* syncthing
 - mkdir AppDir
 - APPDIR="${BUILD_SRC}/AppDir"
