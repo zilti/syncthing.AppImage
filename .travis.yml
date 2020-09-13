@@ -23,8 +23,8 @@ script:
 - cd "${BUILD_SRC}"
 - mkdir AppDir
 - APPDIR="${BUILD_SRC}/AppDir"
-- mkdir -p "${APPDIR}/usr/share"
-- mv syncthing "${APPDIR}/usr/share"
+- mkdir -p "${APPDIR}/usr/share/syncthing"
+- mv syncthing/bin/syncthing "${APPDIR}/usr/share/syncthing"
 # building appimage
 - export ARCH=x86_64
 - |
