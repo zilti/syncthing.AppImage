@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (C) 2014-2020 Free Software Foundation, Inc. -->
+<component type="desktop-application">
+ <id>net.syncthing.desktop</id>
+ <metadata_license>MPL-2</metadata_license>
+ <name>Syncthing</name>
+ <summary>Syncthing synchronizes files between two or more computers in real time, safely protected from prying eyes.</summary>
+ <description>
+  <p>
+   Syncthing is a continuous file synchronization program. It synchronizes files between two or more computers in real time, safely protected from prying eyes. Your data is your data alone and you deserve to choose where it is stored, whether it is shared with some third party, and how it's transmitted over the internet.</p>
+ </description>
+ <launchable type="desktop-id">syncthing.desktop</launchable>
+ <screenshots>
+  <screenshot type="default">
+  <image type="source" width="2820" height="2094">https://syncthing.net/img/screenshot.png</image>
+ </screenshot>
+ </screenshots>
+ <provides>
+     <binary>syncthing</binary>
+ </provides>
+ <releases>
+     <release version="1.9.0" date="2020-09-13">
+         <description>Initial AppImage release.</description>
+     </release>
+ </releases>
+ <url type="homepage">https://syncthing.net</url>
+ <update_contact>dziltener_AT_lyrion.ch</update_contact>
+ <project_group>syncthing</project_group>
+</component>

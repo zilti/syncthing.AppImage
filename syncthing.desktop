@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Syncthing
+StartupWMClass=syncthing
+Comment=Syncthing synchronizes files between two or more computers in real time, safely protected from prying eyes.
+GenericName=File Synchronization
+Exec=syncthing
+Icon=syncthing
+Type=Console
+Categories=Network;
+X-AppImage-Version=1.9.0

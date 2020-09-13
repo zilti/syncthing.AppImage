@@ -1,0 +1,25 @@
+language: go
+sudo: true
+
+script:
+- sudo apt-get install fuse appstream appstream-util git
+- BUILD_SRC="$(pwd)"
+# external downloads
+- wget https://github.com/probonopd/uploadtool/raw/master/upload.sh; chmod +x upload.sh
+- wget https://github.com/probonopd/linuxdeployqt/releases/download/7/linuxdeployqt-7-x86_64.AppImage; mv linuxdeployqt* linuxdeployqt; chmod +x linuxdeployqt
+- wget https://github.com/syncthing/syncthing/releases/download/v1.9.0/syncthing-linux-amd64-v1.9.0.tar.gz
+# unpacking
+- tar xzf syncthing-*.tar.gz
+- mv syncthing-* syncthing
+- mkdir AppDir
+- APPDIR="${BUILD_SRC}/AppDir"
+- mkdir -p "${APPDIR}/usr/share"
+- mv syncthing "${APPDIR}/usr/share"
+# configuring
+- export ARCH=x86_64
+# building
+- |
+  ./linuxdeployqt AppDir/usr/share/syncthing/syncthing \
+  -updateinformation="gh-releases-zsync|zilti|syncthing|continuous|syncthing*.AppImage.zsync" \
+  -appimage
+- bash upload.sh ./*.AppImage*
